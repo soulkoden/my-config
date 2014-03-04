@@ -20,6 +20,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'spf13/PIV'
 Bundle 'vim-scripts/csv.vim'
 Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 syn on
@@ -45,9 +46,9 @@ autocmd Filetype javascript set makeprg=node\ %
 autocmd Filetype php set makeprg=php\ %
 
 noremap  <Backspace> :make!<CR>
-set bg=dark
 
-let g:molokai_original = 1
-let g:rehash256 = 1
-
-color molokai
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"color molokai
+set bg=light
+"color solarized

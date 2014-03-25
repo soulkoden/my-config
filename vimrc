@@ -6,21 +6,22 @@ call vundle#rc()
 
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'aaronj1335/underscore-templates.vim'
-Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'gmarik/vundle'
 Bundle 'groenewege/vim-less'
 Bundle 'jiangmiao/simple-javascript-indenter'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'jonathanfilip/lucius'
+Bundle 'leafgarland/typescript-vim'
 Bundle 'othree/html5.vim'
 Bundle 'peterhoeg/vim-qml'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'spf13/PIV'
-Bundle 'vim-scripts/csv.vim'
 Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/csv.vim'
 
 filetype plugin indent on
 syn on
@@ -44,11 +45,12 @@ au! BufNewFile,BufRead *.xml.twig   set filetype=xml
 
 autocmd Filetype javascript set makeprg=node\ %
 autocmd Filetype php set makeprg=php\ %
+autocmd Filetype less set makeprg=lessc\ %
 
 noremap  <Backspace> :make!<CR>
 
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"color molokai
-set bg=light
-"color solarized
+set nu
+"set bg=dark
+
+let g:solarized_termcolors=256
+color solarized

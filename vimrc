@@ -22,35 +22,34 @@ Bundle 'scrooloose/syntastic'
 Bundle 'spf13/PIV'
 Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/csv.vim'
+Bundle 'vim-scripts/Vim-R-plugin'
 
-filetype plugin indent on
-syn on
-set ts=4
-set sw=4
-set et
-set smarttab
-set foldmethod=syntax
-
-noremap <Tab> :NERDTreeToggle<CR>
-
-set guioptions-=L
-set guioptions-=r
-
-au! BufRead,BufNewFile *.json       set filetype=javascript
-au! BufRead,BufNewFile *.twig       set filetype=jinja
-au! BufNewFile,BufRead *.ss         set filetype=xhtml
-au! BufNewFile,BufRead *.ejs        set filetype=html
-au! BufNewFile,BufRead *.json.twig  set filetype=javascript
-au! BufNewFile,BufRead *.xml.twig   set filetype=xml
+au! BufNewFile,BufRead *.ejs set filetype=html
+au! BufNewFile,BufRead *.json.twig set filetype=javascript
+au! BufNewFile,BufRead *.ss set filetype=xhtml
+au! BufNewFile,BufRead *.xml.twig set filetype=xml
+au! BufRead,BufNewFile *.json set filetype=javascript
+au! BufRead,BufNewFile *.twig set filetype=jinja
 
 autocmd Filetype javascript set makeprg=node\ %
-autocmd Filetype php set makeprg=php\ %
 autocmd Filetype less set makeprg=lessc\ %
+autocmd Filetype php set makeprg=php\ %
+autocmd Filetype r set makeprg=r\ -f\ %
+
+filetype plugin indent on
 
 noremap  <Backspace> :make!<CR>
+noremap <Tab> :NERDTreeToggle<CR>
 
-set nu
 "set bg=dark
+set et
+set foldmethod=syntax
+set guioptions-=L
+set guioptions-=r
+set smarttab
+set sw=4
+set ts=4
 
-let g:solarized_termcolors=256
-color solarized
+syn on
+
+"set bg=dark

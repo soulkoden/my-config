@@ -1,0 +1,71 @@
+" В помошь https://habrahabr.ru/post/303524/
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+
+map <Tab> :NERDTreeToggle<CR>
+let NERDTreeAutoDeleteBuffer = 1
+
+Plugin 'sumpygump/php-documentor-vim'
+
+Plugin 'stanangeloff/php.vim'
+
+function! PhpSyntaxOverride()
+	hi! def link phpDocTags phpDefine
+	hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+	autocmd!
+	autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+Plugin 'othree/html5.vim'
+
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'evidens/vim-twig'
+
+Plugin 'majutsushi/tagbar' " Обязателен пакет ctags
+
+map <Backspace> :TagbarToggle<CR>
+
+Plugin 'mtscout6/vim-tagbar-css' " Обязателен файл ~/.ctags
+
+Plugin 'scrooloose/syntastic'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'vim-airline/vim-airline-themes'
+
+let g:airline_theme = 'light'
+
+Plugin 'sqlserver.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+syntax on
+
+set ts=4
+set sw=4
+set et
+
